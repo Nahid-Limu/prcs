@@ -20,6 +20,18 @@ Route::get('/', 'UserController@home')->name('home');
 Route::get('/teachers', 'UserController@teachers')->name('teachers');
 Route::get('/about', 'UserController@about')->name('about');
 
+Route::get('/notice', 'UserController@notice')->name('notice');
+Route::get('/noticeDetails', 'UserController@noticeDetails')->name('noticeDetails');
+
+Route::get('/career', 'UserController@career')->name('career');
+Route::get('/careerDetails', 'UserController@careerDetails')->name('careerDetails');
+
+Route::get('/events', 'UserController@events')->name('events');
+Route::get('/contact', 'UserController@contact')->name('contact');
+Route::get('/admission', 'UserController@admission')->name('admission');
+Route::get('/result', 'UserController@result')->name('result');
+Route::get('/testPage', 'UserController@testPage')->name('testPage'); 
+
 /* User route end */
 
 // Auth::routes();

@@ -20,4 +20,50 @@ class UserController extends Controller
     {
         return view('about');
     }
+
+    public function notice()
+    {
+        return view('notice');
+    }
+
+    public function noticeDetails()
+    {
+        return view('noticeDetails');
+    }
+
+    public function career()
+    {
+        return view('career');
+    }
+
+    public function careerDetails()
+    {
+        return view('careerDetails');
+    }
+
+    public function events()
+    {
+        return view('events');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function admission()
+    {
+        return view('admission');
+    }
+
+    public function result()
+    {
+        return view('result');
+    }
+
+    public function testPage()
+    {
+        // dd();result
+        return view('testPage');
+    }
 }
