@@ -23,10 +23,10 @@
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/trainers/trainer-1.png" class="img-fluid" alt="">
                         <div class="member-content">
                             <h4>Fazly Adal</h4>
-                            <span>Principal </span>
+                            <span><i class='bx bxs-id-card'></i> Principal </span>
                             <p>
                                 "A teacher's job is to take a bunch of live wires and see that they are well-grounded."
                             </p>

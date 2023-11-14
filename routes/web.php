@@ -41,12 +41,12 @@ Route::get('/testPage', 'UserController@testPage')->name('testPage');
 /* Admin route start */
 Auth::routes();
 /* Logout route start */
-    Route::get('/logout', 'Auth\LoginController@logout');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 /* Logout route end */
 Route::group(['middleware'=>'auth'], function () {
 
     // dashboard
-    Route::get('/dashbord', 'AdminController@viewDashboard')->name('dashboard');
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 
     //--settings--// (businessSettings)
     Route::get('/businessSettings', 'BusinessController@businessSettings')->name('businessSettings');
