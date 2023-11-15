@@ -231,6 +231,13 @@
         </a>
       </li><!-- End Blank Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('teacherList') }}">
+          <i class="bx bxs-user-detail"></i>
+          <span>Teacher</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
     </ul>
 
   </aside><!-- End Sidebar-->

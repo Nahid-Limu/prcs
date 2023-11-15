@@ -48,6 +48,12 @@ Route::group(['middleware'=>'auth'], function () {
     // dashboard
     Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
 
+    //--teacher [start]--//
+    Route::get('/teacherList', 'TeacherController@teacherList')->name('teacherList');
+    // Route::get('/sealProductDetails/{id}', 'SalesController@sealProductDetails')->name('sealProductDetails');
+    Route::post('/teacherAdd', 'TeacherController@teacherAdd')->name('teacherAdd');
+    //--teacher [end]--//
+
     //--settings--// (businessSettings)
     Route::get('/businessSettings', 'BusinessController@businessSettings')->name('businessSettings');
     Route::post('/addBusinessCat', 'BusinessController@addBusinessCat')->name('addBusinessCat');
