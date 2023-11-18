@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{{ route('dashboard') }}">
+        <a class="{{ (Route::currentRouteName() == 'dashboard') ? 'nav-item ' : 'nav-link collapsed' }} " href="{{ route('dashboard') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -232,7 +232,7 @@
       </li><!-- End Blank Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('teacherList') }}">
+        <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
           <i class="bx bxs-user-detail"></i>
           <span>Teacher</span>
         </a>

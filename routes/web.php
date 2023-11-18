@@ -52,6 +52,9 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('/teacherList', 'TeacherController@teacherList')->name('teacherList');
     // Route::get('/sealProductDetails/{id}', 'SalesController@sealProductDetails')->name('sealProductDetails');
     Route::post('/teacherAdd', 'TeacherController@teacherAdd')->name('teacherAdd');
+    Route::get('/teacherDelete/{id}', 'TeacherController@teacherDelete')->name('teacherDelete');
+    Route::get('/teacherEdit/{id}', 'TeacherController@teacherEdit')->name('teacherEdit');
+    Route::post('/teacherUpdate', 'TeacherController@teacherUpdate')->name('teacherUpdate');
     //--teacher [end]--//
 
     //--settings--// (businessSettings)

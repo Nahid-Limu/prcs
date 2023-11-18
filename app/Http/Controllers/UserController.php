@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Teacher;
 
 class UserController extends Controller
 {
@@ -13,7 +14,9 @@ class UserController extends Controller
 
     public function teachers()
     {
-        return view('teachers');
+        $Teachers = Teacher::all();
+
+        return view('teachers', compact('Teachers'));
     }
 
     public function about()

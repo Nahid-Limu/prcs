@@ -14,7 +14,8 @@
     {{-- <title> @yield('title')</title> --}}
     <title>Admin - @yield('title')</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="adminAssets/assets/vendor//jquery/jquery.min.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
