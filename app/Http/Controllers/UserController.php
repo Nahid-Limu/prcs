@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use App\Event;
+
 
 class UserController extends Controller
 {
@@ -17,6 +19,12 @@ class UserController extends Controller
         $Teachers = Teacher::all();
 
         return view('teachers', compact('Teachers'));
+    }
+    
+    public function events()
+    {
+        $Events = Event::all();
+        return view('events', compact('Events'));
     }
 
     public function about()
@@ -42,11 +50,6 @@ class UserController extends Controller
     public function careerDetails()
     {
         return view('careerDetails');
-    }
-
-    public function events()
-    {
-        return view('events');
     }
 
     public function contact()

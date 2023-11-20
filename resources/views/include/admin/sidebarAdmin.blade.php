@@ -224,19 +224,21 @@
         </a>
       </li><!-- End Error 404 Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
+      
 
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
           <i class="bx bxs-user-detail"></i>
           <span>Teacher</span>
         </a>
-      </li><!-- End Blank Page Nav -->
+      </li><!-- End Teacher Page Nav -->
+
+      <li class="nav-item">
+        <a class="{{ (Route::currentRouteName() == 'eventList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('eventList') }}">
+          <i class='bx bx-calendar-event'></i>
+          <span>Event</span>
+        </a>
+      </li><!-- End Event Page Nav -->
 
     </ul>
 

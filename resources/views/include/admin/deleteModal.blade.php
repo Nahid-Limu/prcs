@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Click <kbd class="bg-danger">"Delete"</kbd> button below if you are <strong>Sure</strong> to <strong>Delete</strong> this <br> <strong id="data"></strong> Data. 
+          Click <kbd class="bg-danger">"Delete"</kbd> button below if you are <strong>Sure</strong> to <strong class="text-danger">Delete</strong> this <br> <strong id="data" class="text-primary"></strong> Data from <strong id="listName"></strong>. 
           
         </div>
         <div class="modal-footer">

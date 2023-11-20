@@ -16,9 +16,11 @@
 <!-- JS FUNCTIONS -->
 <script>
     //call deleteModal
-    function deleteModal(Id,Name) {
+    function deleteModal(Id,Name,List) {
+      // alert(List);
       $("#data").text('[ '+Name+' ]');
       $("#data_id").val(Id);
+      $("#listName").text('[ '+List+' ]');
     }
     
     //reset form

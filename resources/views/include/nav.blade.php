@@ -12,7 +12,7 @@
           <li><a class="{{ (Route::currentRouteName() == 'home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'teachers') ? 'active' : '' }}" href="{{ route('teachers') }}">Our Teachers</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'events') ? 'active' : '' }}" href="{{ route('events') }}">Events</a></li>
-          <li><a class="{{ (Route::currentRouteName() == 'notice') || (Route::currentRouteName() == 'noticeSingle') ? 'active' : '' }}" href="{{ route('notice') }}">Notice</a></li>
+          <li><a class="{{ (Route::currentRouteName() == 'notice') || (Route::currentRouteName() == 'noticeDetails') ? 'active' : '' }}" href="{{ route('notice') }}">Notice</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'result') ? 'active' : '' }}" href="{{ route('result') }}">Result</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'admission') ? 'active' : '' }}" href="{{ route('admission') }}">Admission</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'career') || (Route::currentRouteName() == 'careerDetails') ? 'active' : '' }}" href="{{ route('career') }}">Career</a></li>
