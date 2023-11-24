@@ -21,6 +21,7 @@ Route::get('/teachers', 'UserController@teachers')->name('teachers');
 Route::get('/about', 'UserController@about')->name('about');
 
 Route::get('/notice', 'UserController@notice')->name('notice');
+Route::post('/noticeDetails/{id}', 'UserController@noticeDetails')->name('noticeDetails');
 Route::get('/noticeDetails', 'UserController@noticeDetails')->name('noticeDetails');
 
 Route::get('/career', 'UserController@career')->name('career');
@@ -64,12 +65,13 @@ Route::group(['middleware'=>'auth'], function () {
     Route::post('/eventUpdate', 'EventController@eventUpdate')->name('eventUpdate');
     //--event [end]--//
 
-    //--settings--// (businessSettings)
-    Route::get('/businessSettings', 'BusinessController@businessSettings')->name('businessSettings');
-    Route::post('/addBusinessCat', 'BusinessController@addBusinessCat')->name('addBusinessCat');
-    Route::get('/editBusinessCat/{id}', 'BusinessController@editBusinessCat')->name('editBusinessCat');
-    Route::post('/updateBusinessCat', 'BusinessController@updateBusinessCat')->name('updateBusinessCat');
-    Route::get('/deleteCat/{id}', 'BusinessController@deleteCat')->name('deleteCat');
+    //--notice [start]--//
+    Route::get('/noticeList', 'NoticeController@noticeList')->name('noticeList');
+    Route::post('/noticetAdd', 'NoticeController@noticetAdd')->name('noticetAdd');
+    Route::get('/noticeEdit/{id}', 'NoticeController@noticeEdit')->name('noticeEdit');
+    Route::get('/noticeDelete/{id}', 'NoticeController@noticeDelete')->name('noticeDelete');
+    Route::post('/noticeUpdate', 'NoticeController@noticeUpdate')->name('noticeUpdate');
+    //--notice [end]--//
     
     //--settings--// (categorySettings)
     Route::get('/categorySettings', 'CategoryController@categorySettings')->name('categorySettings');

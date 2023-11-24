@@ -1,13 +1,13 @@
 <!-- Vendor JS Files -->
-{{-- <script src="adminAssets/assets/vendor//jquery/jquery.min.js"></script> --}}
+<script src="adminAssets/assets/vendor/jquery/jquery.min.js"></script>
 <script src="adminAssets/assets/vendor/datatables/datatables.min.js"></script>
 <script src="adminAssets/assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="adminAssets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="adminAssets/assets/vendor/chart.js/chart.umd.js"></script>
 <script src="adminAssets/assets/vendor/echarts/echarts.min.js"></script>
-<script src="adminAssets/assets/vendor/quill/quill.min.js"></script>
-<script src="adminAssets/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="adminAssets/assets/vendor/tinymce/tinymce.min.js"></script>
+
+<script src="adminAssets/assets/vendor/summernote/summernote.min.js"></script>
+
 <script src="adminAssets/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
@@ -27,5 +27,29 @@
     function onCloseModal(fromName) {
       $("#form_result").text('');
       $('#'+fromName).trigger("reset");
+      $(".summerNote").summernote('reset');
     }
+
+    //summernote
+    $(document).ready(function() {
+      $(".summerNote").summernote({
+        height: 300,   //don't use px
+      });
+    });
+
+    //ajax flash msg 
+    function SuccessMsg() {
+      $("#success_message").fadeTo(3000, 500).slideUp(500, function(){
+          $("#success_message").alert('close');
+      });
+    }
+
+    //flash msg php form submit
+    setTimeout(function() {
+      $('#successMessage').fadeOut('fast');
+    }, 3000);
+</script>
+
+<script>
+
 </script>

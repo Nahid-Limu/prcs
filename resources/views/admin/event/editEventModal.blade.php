@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
             <!-- Vertical Form -->
-            <form id="EditEventForm" enctype="multipart/form-data" class="row g-3 needs-validation" runat="server" novalidate>
+            <form id="EditEventForm" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
                 @csrf
                 <input type="hidden" id="edit_data_id" name="id">
 

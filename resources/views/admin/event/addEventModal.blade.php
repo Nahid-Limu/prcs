@@ -5,7 +5,7 @@
         
         <div class="modal-header">
           <h5 class="modal-title"><i class='bx bxs-file-plus text-success'></i> Add Event</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button"  onclick="onCloseModal('AddEventForm')" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <span id="form_result"></span>
         <hr>

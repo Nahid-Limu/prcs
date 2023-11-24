@@ -246,12 +246,5 @@
     })
   }
 
-  //ajax flash msg 
-    function SuccessMsg() {
-        $("#success_message").fadeTo(3000, 500).slideUp(500, function(){
-            $("#success_message").alert('close');
-        });
-    }
-
 </script>
 @endsection

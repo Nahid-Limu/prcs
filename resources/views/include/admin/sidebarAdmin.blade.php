@@ -240,6 +240,13 @@
         </a>
       </li><!-- End Event Page Nav -->
 
+      <li class="nav-item">
+        <a class="{{ (Route::currentRouteName() == 'noticeList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('noticeList') }}">
+          <i class='bx bx-bell'></i>
+          <span>Notice</span>
+        </a>
+      </li><!-- End Notice Page Nav -->
+
     </ul>
 
   </aside><!-- End Sidebar-->
