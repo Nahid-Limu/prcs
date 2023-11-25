@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Teacher;
 use App\Event;
 use App\Notice;
+use App\Result;
 
 
 class UserController extends Controller
@@ -17,20 +18,20 @@ class UserController extends Controller
 
     public function teachers()
     {
-        $Teachers = Teacher::all();
-
+        // $Teachers = Teacher::all();
+        $Teachers = Teacher::orderBy('id', 'desc')->get();
         return view('teachers', compact('Teachers'));
     }
     
     public function events()
     {
-        $Events = Event::all();
+        $Events = Event::orderBy('id', 'desc')->get();
         return view('events', compact('Events'));
     }
 
     public function notice()
     {
-        $Notices = Notice::all();
+        $Notices = Notice::orderBy('id', 'desc')->get();
         return view('notice', compact('Notices'));
     }
 
@@ -41,11 +42,12 @@ class UserController extends Controller
         $Notice = Notice::find($id);
         return view('noticeDetails', compact('Notice'));
     }
-    // public function noticeDetails()
-    // {
 
-    //     return view('noticeDetails');
-    // }
+    public function result()
+    {
+        $Results = Result::orderBy('id', 'desc')->get();
+        return view('result', compact('Results'));
+    }
 
     public function about()
     {
@@ -76,10 +78,7 @@ class UserController extends Controller
         return view('admission');
     }
 
-    public function result()
-    {
-        return view('result');
-    }
+
 
     public function testPage()
     {

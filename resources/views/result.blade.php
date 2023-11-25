@@ -20,62 +20,30 @@
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/demo-result.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                {{-- <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Class 5</h4>
-                  <p class="price">2nd Terminal Exam 2023 </p>
-                </div> --}}
+          @foreach ($Results as $Result)
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="course-item">
+                <img src="assets/img/demo-result.png" class="img-fluid" alt="...">
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>{{ $Result->class }}</h4>
+                    <p class="price">{{ $Result->exam_name }} <kbd>{{ date('Y', strtotime($Result->created_at)) }}</kbd> </p>
+                  </div>
 
-                <h3><a href="course-details.html">Class 5</a></h3>
-                <p>2nd Terminal Exam 2023.</p>
-                
-                <div class="btn-wrap">
-                    <a href="#" class="btn btn-sm btn-success">Download Result</a>
+                  {{-- <h3><a href="course-details.html">{{ $Result->class }}</a></h3>
+                  <p class="text-success" >{{ $Result->exam_name }} <kbd>{{ date('Y', strtotime($Result->created_at)) }}</kbd></p> --}}
+                  
+                  <div class="btn-wrap d-flex justify-content-center">
+                      @php
+                          $url= asset('assets/file/result').'/'.$Result->document; 
+                      @endphp
+                      <a href="{{ $url }}" type="button" class="btn btn-sm btn-outline-success text-center" title=""> <i class='bx bx-download'></i> Download Result</a>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/demo-result.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                {{-- <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Class 5</h4>
-                  <p class="price">2nd Terminal Exam 2023 </p>
-                </div> --}}
-
-                <h3><a href="course-details.html">Class 5</a></h3>
-                <p>2nd Terminal Exam 2023.</p>
                 
-                <div class="btn-wrap">
-                    <a href="#" class="btn btn-sm btn-success">Download Result</a>
-                </div>
               </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/demo-result.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                {{-- <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Class 5</h4>
-                  <p class="price">2nd Terminal Exam 2023 </p>
-                </div> --}}
-
-                <h3><a href="course-details.html">Class 5</a></h3>
-                <p>2nd Terminal Exam 2023.</p>
-                
-                <div class="btn-wrap">
-                    <a href="#" class="btn btn-sm btn-success">Download Result</a>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
+            </div> <!-- End Course Item-->
+          @endforeach
 
         </div>
 

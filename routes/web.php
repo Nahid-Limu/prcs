@@ -68,10 +68,18 @@ Route::group(['middleware'=>'auth'], function () {
     //--notice [start]--//
     Route::get('/noticeList', 'NoticeController@noticeList')->name('noticeList');
     Route::post('/noticetAdd', 'NoticeController@noticetAdd')->name('noticetAdd');
-    Route::get('/noticeEdit/{id}', 'NoticeController@noticeEdit')->name('noticeEdit');
     Route::get('/noticeDelete/{id}', 'NoticeController@noticeDelete')->name('noticeDelete');
+    Route::get('/noticeEdit/{id}', 'NoticeController@noticeEdit')->name('noticeEdit');
     Route::post('/noticeUpdate', 'NoticeController@noticeUpdate')->name('noticeUpdate');
     //--notice [end]--//
+
+    //--result [start]--//
+    Route::get('/resultList', 'ResultController@resultList')->name('resultList');
+    Route::post('/resultAdd', 'ResultController@resultAdd')->name('resultAdd');
+     Route::get('/resultDelete/{id}', 'ResultController@resultDelete')->name('resultDelete');
+    Route::get('/resultEdit/{id}', 'ResultController@resultEdit')->name('resultEdit');
+    Route::post('/resultUpdate', 'ResultController@resultUpdate')->name('resultUpdate');
+    //--result [end]--//
     
     //--settings--// (categorySettings)
     Route::get('/categorySettings', 'CategoryController@categorySettings')->name('categorySettings');

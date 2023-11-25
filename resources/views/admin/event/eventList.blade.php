@@ -131,7 +131,8 @@
             processData: false,
             success:function(response)
             {
-              console.log(response);
+              // console.log(response);
+
               // validation
               var html = '';
               if(response.errors)
@@ -172,7 +173,7 @@
           type: 'GET',
           url: "{{url('eventDelete')}}"+"/"+id,
           success: function (response) {
-              console.log(response);
+              // console.log(response);
               if (response.success) {
                       
                 $("#success_message").text(response.success);
@@ -230,7 +231,7 @@
             processData: false,
             success:function(response)
             {
-              console.log(response);
+              // console.log(response);
               if (response.success) {
                 
                 $("#success_message").text(response.success);

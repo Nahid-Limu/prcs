@@ -247,6 +247,13 @@
         </a>
       </li><!-- End Notice Page Nav -->
 
+      <li class="nav-item">
+        <a class="{{ (Route::currentRouteName() == 'resultList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('resultList') }}">
+          <i class='bx bx-spreadsheet' ></i>
+          <span>Result</span>
+        </a>
+      </li><!-- End Notice Page Nav -->
+
     </ul>
 
   </aside><!-- End Sidebar-->

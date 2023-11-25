@@ -1,17 +1,17 @@
 @extends('layouts.appAdmin')
 
-@section('title', 'TeacherList')
+@section('title', 'ResultList')
 
 @section('content')
 
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Teacher</h1>
+      <h1>Result</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item">Teacher</li>
+          <li class="breadcrumb-item">Result</li>
           <li class="breadcrumb-item active">List</li>
         </ol>
       </nav>
@@ -26,27 +26,27 @@
                 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     
-                  <h6 class="m-0 font-weight-bold text-primary"><i class='bx bxs-user-detail'> Teacher LIST</i></h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><i class='bx bxs-user-detail'> Result LIST</i></h6>
                     
                   {{-- flash Message --}}
                     <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
                   {{-- flash Message --}}
 
                   <div class="dropdown no-arrow">
-                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddTeacherModal"><i class='bx bxs-file-plus'></i> Add Teacher</button>
+                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddResultModal"><i class='bx bxs-file-plus'></i> Add Result</button>
                   </div>
 
                 </div>
 
                 <!-- Table with stripped rows -->
-                <table class="table table-responsive" id="TeacherListTable">
+                <table class="table table-responsive" id="ResultistTable">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Designation</th>
-                      <th scope="col">Words</th>
-                      <th scope="col">Photo</th>
+                      <th scope="col">Class</th>
+                      <th scope="col">Exam Name</th>
+                      <th scope="col">Year</th>
+                      <th scope="col">Result Sheet</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -59,10 +59,10 @@
   
           </div>
         </div>
-      </section>
+    </section>
 
-      @include('admin.teacher.addTeaherModal')
-      @include('admin.teacher.editTeaherModal')
+      @include('admin.result.AddResultModal')
+      @include('admin.result.editResultModal')
 
       @include('include.admin.deleteModal')
 
@@ -74,13 +74,13 @@
 <script>
 
   //Table Data
-  $('#TeacherListTable').DataTable({
+  $('#ResultistTable').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
         "order": [[ 0, "asc" ]],
         ajax:{
-        url: "{{ route('teacherList') }}",
+        url: "{{ route('resultList') }}",
         },
         columns:[
           { 
@@ -88,20 +88,20 @@
               name: 'DT_RowIndex' 
           },
           {
-              data: 'name',
-              name: 'name'
+              data: 'class',
+              name: 'class'
           },
           {
-              data: 'designation',
-              name: 'designation'
+              data: 'exam_name',
+              name: 'exam_name'
           },
           {
-              data: 'teachers_words',
-              name: 'teachers_words'
+              data: 'result_year',
+              name: 'result_year'
           },
           {
-              data: 'image',
-              name: 'image'
+              data: 'document',
+              name: 'document'
           },
           {
               data: 'action',
@@ -114,10 +114,11 @@
   //Add Table Data
   function addData() {
 
-    var form = $('#AddTeacherForm')[0];
+    var form = $('#AddResultForm')[0];
     var formdata = new FormData(form);
+
     $.ajax({
-            url:"{{ route('teacherAdd') }}",
+            url:"{{ route('resultAdd') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -146,9 +147,9 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#TeacherListTable').DataTable().ajax.reload();
-                $('#AddTeacherModal').modal('hide');
-                $("#AddTeacherForm").trigger("reset");
+                $('#ResultistTable').DataTable().ajax.reload();
+                $('#AddResultModal').modal('hide');
+                $("#AddResultForm").trigger("reset");
                 // alert(response.success);
                 SuccessMsg();
               }
@@ -166,13 +167,13 @@
       // alert(121);
       $.ajax({
           type: 'GET',
-          url: "{{url('teacherDelete')}}"+"/"+id,
+          url: "{{url('resultDelete')}}"+"/"+id,
           success: function (response) {
               // console.log(response);
               if (response.success) {
                       
                 $("#success_message").text(response.success);
-                $('#TeacherListTable').DataTable().ajax.reload();
+                $('#ResultistTable').DataTable().ajax.reload();
                 $('#DeleteModal').modal('hide');
 
                 SuccessMsg();
@@ -187,20 +188,18 @@
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditTeacherForm").trigger("reset");
+    $("#EditResultForm").trigger("reset");
     $.ajax({
         type: 'GET',
-        url: "{{url('teacherEdit')}}"+"/"+id,
+        url: "{{url('resultEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
             // console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
-              $('#edit_name').val(response.name);
-              $('#edit_designation').val(response.designation);
-              $('#edit_teachers_words').val(response.teachers_words);
-              $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
+              $('#edit_class').val(response.class);
+              $('#edit_exam_name').val(response.exam_name);
               
             }
 
@@ -213,10 +212,10 @@
   //Update Table Data
   function updateData(params) {
     // alert();
-    var form = $('#EditTeacherForm')[0];
+    var form = $('#EditResultForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('teacherUpdate') }}",
+            url:"{{ route('resultUpdate') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -229,8 +228,8 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#TeacherListTable').DataTable().ajax.reload();
-                $('#EditTeacherModal').modal('hide');
+                $('#ResultistTable').DataTable().ajax.reload();
+                $('#EditResultModal').modal('hide');
                 
                 SuccessMsg();
               }
@@ -240,6 +239,8 @@
             }
     })
   }
-  
+
 </script>
+
+
 @endsection
