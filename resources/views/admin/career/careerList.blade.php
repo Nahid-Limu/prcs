@@ -1,17 +1,17 @@
 @extends('layouts.appAdmin')
 
-@section('title', 'NoticeList')
+@section('title', 'CareerList')
 
 @section('content')
 
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Notice</h1>
+      <h1>Career</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item">Notice</li>
+          <li class="breadcrumb-item">Career</li>
           <li class="breadcrumb-item active">List</li>
         </ol>
       </nav>
@@ -26,27 +26,29 @@
                 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     
-                  <h6 class="m-0 font-weight-bold text-primary"><i class='bx bxs-user-detail'> Notice LIST</i></h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><i class='bx bxs-user-detail'> Career LIST</i></h6>
                     
                   {{-- flash Message --}}
                     <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
                   {{-- flash Message --}}
 
                   <div class="dropdown no-arrow">
-                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddNoticeModal"><i class='bx bxs-file-plus'></i> Add Notice</button>
+                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddCareerModal"><i class='bx bxs-file-plus'></i> Add Career</button>
                   </div>
 
                 </div>
 
                 <!-- Table with stripped rows -->
-                <table class="table table-responsive" id="NoticeListTable">
+                <table class="table table-responsive" id="CareerListTable">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Description</th>
-                      <th scope="col">Document</th>
+                      <th scope="col">Job Title</th>
+                      <th scope="col">Slary</th>
+                      <th scope="col">PulishDate</th>
+                      <th scope="col">Deadline</th>
+                      <th scope="col">Vacancy</th>
+                      <th scope="col">Discription</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -61,8 +63,8 @@
         </div>
     </section>
 
-      @include('admin.notice.AddNoticeModal')
-      @include('admin.notice.editNoticeModal')
+      @include('admin.career.AddCareerModal')
+      @include('admin.career.editCareerModal')
 
       @include('include.admin.deleteModal')
 
@@ -74,13 +76,13 @@
 <script>
 
   //Table Data
-  $('#NoticeListTable').DataTable({
+  $('#CareerListTable').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
         "order": [[ 0, "asc" ]],
         ajax:{
-        url: "{{ route('noticeList') }}",
+        url: "{{ route('careerList') }}",
         },
         columns:[
           { 
@@ -92,16 +94,24 @@
               name: 'title'
           },
           {
+              data: 'salary_range',
+              name: 'salary_range'
+          },
+          {
               data: 'pulish_date',
               name: 'pulish_date'
           },
           {
-              data: 'description',
-              name: 'description'
+              data: 'deadline',
+              name: 'deadline'
           },
           {
-              data: 'document',
-              name: 'document'
+              data: 'vacancy',
+              name: 'vacancy'
+          },
+          {
+              data: 'description',
+              name: 'description'
           },
           {
               data: 'action',
@@ -114,11 +124,11 @@
   //Add Table Data
   function addData() {
 
-    var form = $('#AddNoticeForm')[0];
+    var form = $('#AddCareerForm')[0];
     var formdata = new FormData(form);
 
     $.ajax({
-            url:"{{ route('noticeAdd') }}",
+            url:"{{ route('careerAdd') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -147,9 +157,9 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#NoticeListTable').DataTable().ajax.reload();
-                $('#AddNoticeModal').modal('hide');
-                $("#AddNoticeForm").trigger("reset");
+                $('#CareerListTable').DataTable().ajax.reload();
+                $('#AddCareerModal').modal('hide');
+                $("#AddCareerForm").trigger("reset");
                 // alert(response.success);
                 SuccessMsg();
               }
@@ -167,13 +177,13 @@
       // alert(121);
       $.ajax({
           type: 'GET',
-          url: "{{url('noticeDelete')}}"+"/"+id,
+          url: "{{url('careerDelete')}}"+"/"+id,
           success: function (response) {
               // console.log(response);
               if (response.success) {
                       
                 $("#success_message").text(response.success);
-                $('#NoticeListTable').DataTable().ajax.reload();
+                $('#CareerListTable').DataTable().ajax.reload();
                 $('#DeleteModal').modal('hide');
 
                 SuccessMsg();
@@ -188,18 +198,21 @@
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditNoticeForm").trigger("reset");
+    $("#EditCareerForm").trigger("reset");
     $.ajax({
         type: 'GET',
-        url: "{{url('noticeEdit')}}"+"/"+id,
+        url: "{{url('careerEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
-            // console.log(response);
+            console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
               $('#edit_title').val(response.title);
-              $('#edit_pulish_date').val(response.pulish_date);
+              $('#edit_salary_start').val(response.salary_start);
+              $('#edit_salary_end').val(response.salary_end);
+              $('#edit_deadline').val(response.deadline);
+              $('#edit_vacancy').val(response.vacancy);
               $('#edit_description').summernote('code', response.description);
               // $("#imageView").attr("src", "assets/img/events/"+ response.image);
               
@@ -214,10 +227,10 @@
   //Update Table Data
   function updateData(params) {
     // alert();
-    var form = $('#EditNoticeForm')[0];
+    var form = $('#EditCareerForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('noticeUpdate') }}",
+            url:"{{ route('careerUpdate') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -230,8 +243,8 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#NoticeListTable').DataTable().ajax.reload();
-                $('#EditNoticeModal').modal('hide');
+                $('#CareerListTable').DataTable().ajax.reload();
+                $('#EditCareerModal').modal('hide');
                 
                 SuccessMsg();
               }

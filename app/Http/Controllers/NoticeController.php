@@ -52,7 +52,7 @@ class NoticeController extends Controller
     }
 
     // Add Data Function 
-    public function noticetAdd(Request $request)
+    public function noticeAdd(Request $request)
     {
         // dd($request->all());
         //validation [start]

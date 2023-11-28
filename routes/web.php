@@ -21,11 +21,13 @@ Route::get('/teachers', 'UserController@teachers')->name('teachers');
 Route::get('/about', 'UserController@about')->name('about');
 
 Route::get('/notice', 'UserController@notice')->name('notice');
-Route::post('/noticeDetails/{id}', 'UserController@noticeDetails')->name('noticeDetails');
-Route::get('/noticeDetails', 'UserController@noticeDetails')->name('noticeDetails');
+Route::get('/noticeDetails/{id}', 'UserController@noticeDetails')->name('noticeDetails');
+
+
 
 Route::get('/career', 'UserController@career')->name('career');
-Route::get('/careerDetails', 'UserController@careerDetails')->name('careerDetails');
+Route::get('/careerDetails/{id}', 'UserController@careerDetails')->name('careerDetails');
+// Route::get('/careerDetails', 'UserController@careerDetails')->name('careerDetails');
 
 Route::get('/events', 'UserController@events')->name('events');
 Route::get('/contact', 'UserController@contact')->name('contact');
@@ -67,7 +69,7 @@ Route::group(['middleware'=>'auth'], function () {
 
     //--notice [start]--//
     Route::get('/noticeList', 'NoticeController@noticeList')->name('noticeList');
-    Route::post('/noticetAdd', 'NoticeController@noticetAdd')->name('noticetAdd');
+    Route::post('/noticeAdd', 'NoticeController@noticeAdd')->name('noticeAdd');
     Route::get('/noticeDelete/{id}', 'NoticeController@noticeDelete')->name('noticeDelete');
     Route::get('/noticeEdit/{id}', 'NoticeController@noticeEdit')->name('noticeEdit');
     Route::post('/noticeUpdate', 'NoticeController@noticeUpdate')->name('noticeUpdate');
@@ -76,10 +78,18 @@ Route::group(['middleware'=>'auth'], function () {
     //--result [start]--//
     Route::get('/resultList', 'ResultController@resultList')->name('resultList');
     Route::post('/resultAdd', 'ResultController@resultAdd')->name('resultAdd');
-     Route::get('/resultDelete/{id}', 'ResultController@resultDelete')->name('resultDelete');
+    Route::get('/resultDelete/{id}', 'ResultController@resultDelete')->name('resultDelete');
     Route::get('/resultEdit/{id}', 'ResultController@resultEdit')->name('resultEdit');
     Route::post('/resultUpdate', 'ResultController@resultUpdate')->name('resultUpdate');
     //--result [end]--//
+
+    //--career [start]--//
+    Route::get('/careerList', 'CareerController@careerList')->name('careerList');
+    Route::post('/careerAdd', 'CareerController@careerAdd')->name('careerAdd');
+    Route::get('/careerDelete/{id}', 'CareerController@careerDelete')->name('careerDelete');
+    Route::get('/careerEdit/{id}', 'CareerController@careerEdit')->name('careerEdit');
+    Route::post('/careerUpdate', 'CareerController@careerUpdate')->name('careerUpdate');
+    //--career [end]--//
     
     //--settings--// (categorySettings)
     Route::get('/categorySettings', 'CategoryController@categorySettings')->name('categorySettings');

@@ -26,8 +26,6 @@
                   <input type="text" class="form-control" name="teachers_words" id="edit_teachers_words" required>
                 </div>
                 
-                
-                
                 <div class="col-md-6">
                   <label for="image" class="form-label">Photo</label>
                   <input type="file" class="form-control" name="image" id="edit_image">

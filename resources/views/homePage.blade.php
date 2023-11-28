@@ -41,13 +41,13 @@
             <div class="row counters">
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Students</p>
             </div>
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Courses</p>
+                <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Teachers</p>
             </div>
 
             <div class="col-lg-3 col-6 text-center">
@@ -56,8 +56,8 @@
             </div>
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Trainers</p>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Classes</p>
             </div>
 
             </div>
@@ -200,7 +200,7 @@
     <!-- End Features Section -->
 
     <!-- ======= Popular Courses Section ======= -->
-    <section id="popular-courses" class="courses">
+    {{-- <section id="popular-courses" class="courses">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -291,7 +291,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <!-- End Popular Courses Section -->
 
     <!-- ======= Trainers Section ======= -->

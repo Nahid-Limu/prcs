@@ -192,7 +192,7 @@
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditTeacherForm").trigger("reset");
+    $("#EditEventForm").trigger("reset");
     $.ajax({
         type: 'GET',
         url: "{{url('eventEdit')}}"+"/"+id,

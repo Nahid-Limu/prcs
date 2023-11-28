@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'testPage')
+@section('title', 'Career')
 
 @section('content')
 
@@ -40,27 +40,30 @@
                 </ul> --}}
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
+                        @foreach ($Careers as $Career)
                         <div class="job-item p-4 mb-4 bg-light ">
                             <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                <div class="col-sm-12 col-md-9 d-flex align-items-center">
                                     <img class="flex-shrink-0 img-fluid " src="assets/img/joinUs-logo.png" alt="" style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
-                                        <h5 class="mb-3"><kbd>Job Title:</kbd><a href="{{ route('careerDetails') }}" class="text-info" > Assistant Teacher ( ICT ) </a></h5>
-                                        <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School And College</span>
+                                        <h5 class="mb-3">Job Title : <a href="{{ route('careerDetails', [base64_encode($Career->id)] ) }}" class="text-info" > {{ $Career->title }} </a></h5>
+                                        <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School & College</span>
                                         <span class="text-truncate me-3"><i class='bx bx-time-five bx-spin text-primary me-2'></i>Full Time</span>
-                                        <span class="text-truncate me-0"><i class='bx bx-dollar bx-tada text-primary me-2'></i>$123 - $456</span>
+                                        <span class="text-truncate me-0"><i class='bx bx-dollar bx-tada text-primary me-2'></i>{{ $Career->salary_start }} - {{ $Career->salary_end }} BDT</span>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                <div class="col-sm-12 col-md-3 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href=""><i class='bx bx-heart text-primary'></i></a>
-                                        <a class="btn btn-outline-primary" href="{{ route('careerDetails') }}">Apply Now</a>
+                                        {{-- <a class="btn btn-light btn-square me-3" href=""><i class='bx bx-heart text-primary'></i></a> --}}
+                                        <a class="btn btn-outline-primary" href="{{ route('careerDetails', [base64_encode($Career->id)] ) }}">View Details</a>
                                     </div>
-                                    <small class="text-truncate"><i class='bx bx-calendar text-primary me-2'></i>Date Line: 01 Jan, 2045</small>
+                                    <small class="text-truncate"><i class='bx bx-calendar bx-flashing text-primary me-2' ></i>Date Line: {{ date('j F, Y', strtotime($Career->deadline)) }}</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="job-item p-4 mb-4">
+                        @endforeach
+                        
+                        {{-- <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                     <img class="flex-shrink-0 img-fluid border rounded" src="assets/img/joinUs-logo.png" alt="" style="width: 80px; height: 80px;">
@@ -139,10 +142,10 @@
                                     <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan, 2045</small>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
                     </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
+                    {{-- <div id="tab-2" class="tab-pane fade show p-0">
                         <div class="job-item p-4 mb-4">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-md-8 d-flex align-items-center">
@@ -347,7 +350,7 @@
                             </div>
                         </div>
                         <a class="btn btn-primary py-3 px-5" href="">Browse More Jobs</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

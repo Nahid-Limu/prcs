@@ -7,6 +7,7 @@ use App\Teacher;
 use App\Event;
 use App\Notice;
 use App\Result;
+use App\Career;
 
 
 class UserController extends Controller
@@ -35,10 +36,9 @@ class UserController extends Controller
         return view('notice', compact('Notices'));
     }
 
-    public function noticeDetails(Request $request)
+    public function noticeDetails($id)
     {
-        // dd($request->id[0]);
-        $id = (base64_decode($request->id[0]));
+        $id = (base64_decode($id));
         $Notice = Notice::find($id);
         return view('noticeDetails', compact('Notice'));
     }
@@ -60,12 +60,25 @@ class UserController extends Controller
 
     public function career()
     {
-        return view('career');
+        // $Careers = Career::all();
+        $Careers = Career::orderBy('id', 'desc')->get();
+        // dd($Careers);
+        return view('career', compact('Careers'));
     }
 
-    public function careerDetails()
+    // public function careerDetails(Request $request)
+    // {
+    //     dd($request->all());
+    //     // $id = (base64_decode($id));
+    //     $Career = Career::find($id);
+    //     return view('careerDetails', compact('Career'));
+    // }
+    public function careerDetails($id)
     {
-        return view('careerDetails');
+        $id = (base64_decode($id));
+        $Career = Career::find($id);
+        // dd($Career);
+        return view('careerDetails', compact('Career'));
     }
 
     public function contact()

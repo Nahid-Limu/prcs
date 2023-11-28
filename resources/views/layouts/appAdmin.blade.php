@@ -24,6 +24,7 @@
     <!-- Template Main CSS File -->
     <link href="adminAssets/assets/css/style.css" rel="stylesheet">
     @include('include.admin.cssAdmin')
+    {{-- @yield('style') --}}
 
 </head>
 

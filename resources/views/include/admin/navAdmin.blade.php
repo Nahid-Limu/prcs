@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
         <img src="adminAssets/assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Dashboard</span>
+        <span class="d-none d-lg-block"><span class="text-danger">PRSC</span> Dashboard</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

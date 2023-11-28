@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'testPage')
+@section('title', 'Career Details')
 
 @section('content')
 
@@ -22,38 +22,22 @@
             <div class="row gy-5 gx-4">
                 <div class="col-lg-8">
                     <div class="d-flex align-items-center mb-5">
-                        <img class="flex-shrink-0 img-fluid" src="assets/img/joinUs-logo.png" alt="" style="width: 80px; height: 80px;">
+                        <img class="flex-shrink-0 img-fluid" src="{{ asset('assets/img/joinUs-logo.png')}}" alt="" style="width: 80px; height: 80px;">
                         <div class="text-start ps-4">
-                            <h3 class="mb-3"><kbd>Job Title:</kbd> Assistant Teacher ( ICT )</h3>
-                            <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School And College</span>
+                            <h3 class="mb-3">Job Title: {{ $Career->title }} </h3>
+                            {{-- <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School And College</span> --}}
                             <span class="text-truncate me-3"><i class="bx bx-time-five bx-spin text-primary me-2"></i>Full Time</span>
-                            <span class="text-truncate me-0"><i class="bx bx-dollar bx-tada text-primary me-2"></i>$123 - $456</span>
+                            <span class="text-truncate me-0"><i class="bx bx-dollar bx-tada text-primary me-2"></i>{{ $Career->salary_start }} - {{ $Career->salary_end }} BDT</span>
+                            <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School And College</span>
                         </div>
                     </div>
 
                     <div class="mb-5">
-                        <h4 class="mb-3">Job description</h4>
-                        <p>Dolor justo tempor duo ipsum accusam rebum gubergren erat. Elitr stet dolor vero clita labore gubergren. Kasd sed ipsum elitr clita rebum ut sea diam tempor. Sadipscing nonumy vero labore invidunt dolor sed, eirmod dolore amet aliquyam consetetur lorem, amet elitr clita et sed consetetur dolore accusam. Vero kasd nonumy justo rebum stet. Ipsum amet sed lorem sea magna. Rebum vero dolores dolores elitr vero dolores magna, stet sea sadipscing stet et. Est voluptua et sanctus at sanctus erat vero sed sed, amet duo no diam clita rebum duo, accusam tempor takimata clita stet nonumy rebum est invidunt stet, dolor.</p>
-                        <h4 class="mb-3">Responsibility</h4>
-                        <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Diam diam stet erat no est est</li>
-                        </ul>
-                        <h4 class="mb-3">Qualifications</h4>
-                        <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
-                            <li><i class="bx bx-chevron-right text-primary me-2"></i>Diam diam stet erat no est est</li>
-                        </ul>
+
+                        {!! $Career->description !!}
+
                         <h4 class="mb-3">Contact</h4>
-                        {{-- <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p> --}}
+                        <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
                         <ul class="list-unstyled">
                             <li><i class="bx bx-envelope bx-tada text-primary me-2"></i>email@gmail.com</li>
                             <li><i class="bx bx-phone bx-tada text-primary me-2"></i>+88 017636150770</li>
@@ -93,12 +77,12 @@
                 <div class="col-lg-4">
                     <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4">Job Summery</h4>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: 01 Jan, 2045</p>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Vacancy: 123 Position</p>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature: Full Time</p>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: $123 - $456</p>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Location: New York, USA</p>
-                        <p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>Date Line: 01 Jan, 2045</p>
+                        <p><i class="bx bx-chevron-right text-primary me-2"></i>Published On: {{ date('j M , Y', strtotime($Career->created_at)) }} </p>
+                        <p><i class="bx bx-chevron-right text-primary me-2"></i>Vacancy: {{ $Career->vacancy }} </p>
+                        <p><i class="bx bx-chevron-right text-primary me-2"></i>Job Nature: Full Time</p>
+                        <p><i class="bx bx-chevron-right text-primary me-2"></i>Salary: {{ $Career->salary_start }} - {{ $Career->salary_end }} BDT </p>
+                        {{-- <p><i class="bx bx-chevron-right text-primary me-2"></i>Location: Residential School And College</p> --}}
+                        <p class="m-0"><i class="bx bx-chevron-right text-primary me-2"></i>Date Line: {{ date('j M , Y', strtotime($Career->deadline)) }} </p>
                     </div>
                     <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4">Institute Detail</h4>
