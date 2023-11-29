@@ -46,7 +46,7 @@
                                 <div class="col-sm-12 col-md-9 d-flex align-items-center">
                                     <img class="flex-shrink-0 img-fluid " src="assets/img/joinUs-logo.png" alt="" style="width: 80px; height: 80px;">
                                     <div class="text-start ps-4">
-                                        <h5 class="mb-3">Job Title : <a href="{{ route('careerDetails', [base64_encode($Career->id)] ) }}" class="text-info" > {{ $Career->title }} </a></h5>
+                                        <h5 class="mb-3">Job Title : <a href="{{ route('careerDetails', [base64_encode($Career->id)] ) }}" class="text-info" > {{ ucwords($Career->title) }} </a></h5>
                                         <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School & College</span>
                                         <span class="text-truncate me-3"><i class='bx bx-time-five bx-spin text-primary me-2'></i>Full Time</span>
                                         <span class="text-truncate me-0"><i class='bx bx-dollar bx-tada text-primary me-2'></i>{{ $Career->salary_start }} - {{ $Career->salary_end }} BDT</span>

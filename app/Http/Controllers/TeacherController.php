@@ -64,8 +64,10 @@ class TeacherController extends Controller
             
             $Teacher = new Teacher;
 
-            $Teacher->name = ucwords($request->name);
-            $Teacher->designation = ucwords($request->designation);
+            // $Teacher->name = ucwords($request->name);
+            // $Teacher->designation = ucwords($request->designation);
+            $Teacher->name = $request->name;
+            $Teacher->designation = $request->designation;
             $Teacher->teachers_words =$request->teachers_words;
 
                 $image = $request->file('image');
@@ -130,8 +132,10 @@ class TeacherController extends Controller
                 }
             }
             
-            $Teacher->name = ucwords($request->name);
-            $Teacher->designation = ucwords($request->designation);
+            // $Teacher->name = ucwords($request->name);
+            // $Teacher->designation = ucwords($request->designation);
+            $Teacher->name = $request->name;
+            $Teacher->designation = $request->designation;
             $Teacher->teachers_words =$request->teachers_words;
 
                 $image = $request->file('image');
@@ -152,8 +156,10 @@ class TeacherController extends Controller
 
         }else {
             $Teacher = Teacher::find($request->id);
-            $Teacher->name = ucwords($request->name);
-            $Teacher->designation = ucwords($request->designation);
+            // $Teacher->name = ucwords($request->name);
+            // $Teacher->designation = ucwords($request->designation);
+            $Teacher->name = $request->name;
+            $Teacher->designation = $request->designation;
             $Teacher->teachers_words =$request->teachers_words;
             $Teacher->save();
 

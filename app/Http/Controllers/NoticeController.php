@@ -75,7 +75,8 @@ class NoticeController extends Controller
             
             $Notice = new Notice;
 
-            $Notice->title = ucwords($request->title);
+            // $Notice->title = ucwords($request->title);
+            $Notice->title = $request->title;
             $Notice->pulish_date =$request->pulish_date;
             $Notice->description =$request->description;
 
@@ -143,7 +144,8 @@ class NoticeController extends Controller
                 }
             }
             
-            $Notice->title = ucwords($request->title);
+            // $Notice->title = ucwords($request->title);
+            $Notice->title = $request->title;
             $Notice->pulish_date =$request->pulish_date;
             $Notice->description =$request->description;
 
@@ -164,7 +166,8 @@ class NoticeController extends Controller
 
         }else {
             $Notice = Notice::find($request->id);
-            $Notice->title = ucwords($request->title);
+            // $Notice->title = ucwords($request->title);
+            $Notice->title = $request->title;
             $Notice->pulish_date =$request->pulish_date;
             $Notice->description =$request->description;
             $Notice->save();

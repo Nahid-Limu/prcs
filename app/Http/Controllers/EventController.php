@@ -75,7 +75,8 @@ class EventController extends Controller
             
             $Event = new Event;
 
-            $Event->title = ucwords($request->title);
+            // $Event->title = ucwords($request->title);
+            $Event->title = $request->title;
             $Event->event_date =$request->event_date;
             $Event->event_time =$request->event_time;
             $Event->description =$request->description;
@@ -142,7 +143,8 @@ class EventController extends Controller
                 }
             }
             
-            $Event->title = ucwords($request->title);
+            // $Event->title = ucwords($request->title);
+            $Event->title = $request->title;
             $Event->event_date =$request->event_date;
             $Event->event_time =$request->event_time;
             $Event->description =$request->description;
@@ -165,7 +167,8 @@ class EventController extends Controller
 
         }else {
             $Event = Event::find($request->id);
-            $Event->title = ucwords($request->title);
+            // $Event->title = ucwords($request->title);
+            $Event->title = $request->title;
             $Event->event_date =$request->event_date;
             $Event->event_time =$request->event_time;
             $Event->description =$request->description;

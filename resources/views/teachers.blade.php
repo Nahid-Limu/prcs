@@ -46,7 +46,7 @@
                         <div class="member">
                             <img src="{{ asset('assets/img/teachers').'/'.$Teacher->image }}" class="img-fluid" alt="">
                             <div class="member-content">
-                                <h4> {{ $Teacher->name }} </h4>
+                                <h4> {{ ucwords($Teacher->name) }} </h4>
                                 <span><i class='bx bxs-id-card'></i> {{ $Teacher->designation }} </span>
                                 <p>
                                     {{ $Teacher->teachers_words }}

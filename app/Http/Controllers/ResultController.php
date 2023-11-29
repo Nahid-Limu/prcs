@@ -69,8 +69,10 @@ class ResultController extends Controller
             
             $Result = new Result;
 
-            $Result->class = ucwords($request->class);
-            $Result->exam_name =ucwords($request->exam_name);
+            // $Result->class = ucwords($request->class);
+            // $Result->exam_name =ucwords($request->exam_name);
+            $Result->class = $request->class;
+            $Result->exam_name = $request->exam_name;
 
                 $document = $request->file('document');
 
@@ -136,8 +138,10 @@ class ResultController extends Controller
                 }
             }
             
-            $Result->class = ucwords($request->class);
-            $Result->exam_name =ucwords($request->exam_name);
+            // $Result->class = ucwords($request->class);
+            // $Result->exam_name =ucwords($request->exam_name);
+            $Result->class = $request->class;
+            $Result->exam_name = $request->exam_name;
             
                 $document = $request->file('document');
 
@@ -156,8 +160,10 @@ class ResultController extends Controller
 
         }else {
             $Result = Result::find($request->id);
-            $Result->class = ucwords($request->class);
-            $Result->exam_name =ucwords($request->exam_name);
+            // $Result->class = ucwords($request->class);
+            // $Result->exam_name =ucwords($request->exam_name);
+            $Result->class = $request->class;
+            $Result->exam_name = $request->exam_name;
             $Result->save();
 
             if ($Result->id) {

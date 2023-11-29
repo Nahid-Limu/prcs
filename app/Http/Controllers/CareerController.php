@@ -80,7 +80,8 @@ class CareerController extends Controller
 
         $Career = new Career;
 
-        $Career->title = ucwords($request->title);
+        // $Career->title = ucwords($request->title);
+        $Career->title = $request->title;
         $Career->salary_start =$request->salary_start;
         $Career->salary_end =$request->salary_end;
         $Career->deadline =$request->deadline;
@@ -140,7 +141,8 @@ class CareerController extends Controller
         //validation [end]
         
         $Career = Career::find($request->id);
-        $Career->title = ucwords($request->title);
+        // $Career->title = ucwords($request->title);
+        $Career->title = $request->title;
         $Career->salary_start =$request->salary_start;
         $Career->salary_end =$request->salary_end;
         $Career->deadline =$request->deadline;

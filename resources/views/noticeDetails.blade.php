@@ -29,7 +29,7 @@
                     </div>
                     <!-- notice content -->
                     <div>
-                        <h3 class="mb-4">{{ $Notice->title }}</h3>
+                        <h3 class="mb-4">{{ ucwords($Notice->title) }}</h3>
                         <p>{!! $Notice->description !!}</p>
                         {{-- <ul class="list-styled mb-5">
                             <li>Digital Access to Scholarship at Smart</li>

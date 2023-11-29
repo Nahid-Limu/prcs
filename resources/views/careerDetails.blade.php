@@ -24,7 +24,7 @@
                     <div class="d-flex align-items-center mb-5">
                         <img class="flex-shrink-0 img-fluid" src="{{ asset('assets/img/joinUs-logo.png')}}" alt="" style="width: 80px; height: 80px;">
                         <div class="text-start ps-4">
-                            <h3 class="mb-3">Job Title: {{ $Career->title }} </h3>
+                            <h3 class="mb-3">Job Title: {{ ucwords($Career->title) }} </h3>
                             {{-- <span class="text-truncate me-3"><i class="bx bx-map bx-burst text-primary me-2"></i>Panchagarh Residential School And College</span> --}}
                             <span class="text-truncate me-3"><i class="bx bx-time-five bx-spin text-primary me-2"></i>Full Time</span>
                             <span class="text-truncate me-0"><i class="bx bx-dollar bx-tada text-primary me-2"></i>{{ $Career->salary_start }} - {{ $Career->salary_end }} BDT</span>
@@ -82,7 +82,7 @@
                         <p><i class="bx bx-chevron-right text-primary me-2"></i>Job Nature: Full Time</p>
                         <p><i class="bx bx-chevron-right text-primary me-2"></i>Salary: {{ $Career->salary_start }} - {{ $Career->salary_end }} BDT </p>
                         {{-- <p><i class="bx bx-chevron-right text-primary me-2"></i>Location: Residential School And College</p> --}}
-                        <p class="m-0"><i class="bx bx-chevron-right text-primary me-2"></i>Date Line: {{ date('j M , Y', strtotime($Career->deadline)) }} </p>
+                        <p class="m-0"><i class="bx bx-chevron-right text-primary me-2"></i>Deadline: {{ date('j M , Y', strtotime($Career->deadline)) }} </p>
                     </div>
                     <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4">Institute Detail</h4>

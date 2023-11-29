@@ -26,8 +26,8 @@
                 <img src="assets/img/demo-result.png" class="img-fluid" alt="...">
                 <div class="course-content">
                   <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>{{ $Result->class }}</h4>
-                    <p class="price">{{ $Result->exam_name }} <kbd>{{ date('Y', strtotime($Result->created_at)) }}</kbd> </p>
+                    <h4>{{  ucwords($Result->class) }}</h4>
+                    <p class="price">{{ ucwords($Result->exam_name) }} <kbd>{{ date('Y', strtotime($Result->created_at)) }}</kbd> </p>
                   </div>
 
                   {{-- <h3><a href="course-details.html">{{ $Result->class }}</a></h3>

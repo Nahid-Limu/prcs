@@ -33,7 +33,7 @@
                             <img src="{{ asset('assets/img/events').'/'.$Event->image }}" alt="...">
                             </div>
                             <div class="card-body">
-                            <h5 class="card-title"><a href="">{{ $Event->title }}</a></h5>
+                            <h5 class="card-title"><a href="">{{  ucwords($Event->title) }}</a></h5>
                             <p class="fst-italic text-center">{{ date('l, F jS, Y', strtotime($Event->event_date)) }} at {{ date('h:i A', strtotime($Event->event_time)) }}</p>
                             <p class="card-text">{{ $Event->description }}</p>
                             </div>
