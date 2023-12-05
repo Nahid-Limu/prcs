@@ -83,6 +83,79 @@
 
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>ভর্তি:</h3>
+                    <p class="fst-italic">
+                        নিয়মাবলী:-
+                    </p>
+                    <p>
+                        প্রতিষ্ঠানের ভর্তি ও অন্যান্য ফি নগদ রশিদ মুলে অথবা ব্যাংক জমার মাধ্যমে প্রতি মাসের ০১ হতে ০৫ তারিখের মধ্যে পরিশোধ করতে হবে
+                    </p>
+                </div>
+
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>ভর্তি ও অন্যান্য ফি:</h3>
+                    <p class="fst-italic">
+                      বর্ণনা:-
+                    </p>
+                    <table class="table table-hover table-bordered ">
+                      <thead class="table-primary">
+                        <tr>
+                          <th>শ্রেণি</th>
+                          <th>আবাসিক</th>
+                          <th>অনাবাসিক</th>
+                          <th>ডে-কেয়ার</th>
+                          <th>ভর্তি ফি</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td class="table-info">৬ষ্ঠ</td>
+                            <td>৭৫০০/-</td>
+                            <td>১০০০/-</td>
+                            <td>৩০০০/-</td>
+                            <td>২৫০০/-</td>
+                        </tr>
+                        <tr>
+                            <td class="table-info">৭ম</td>
+                            <td>৭৫০০/-</td>
+                            <td>১০০০/-</td>
+                            <td>৩০০০/-</td>
+                            <td>২৫০০/-</td>
+                        </tr>
+                        <tr>
+                            <td class="table-info">৮ম</td>
+                            <td>৮০০০/-</td>
+                            <td>১৫০০/-</td>
+                            <td>৩০০০/-</td>
+                            <td>২৫০০/-</td>
+                        </tr>
+                        <tr>
+                            <td class="table-info">৯ম</td>
+                            <td>৮০০০/-</td>
+                            <td>১৮০০/-</td>
+                            <td>৩৫০০/-</td>
+                            <td>৩০০০/-</td>
+                        </tr>
+                        <tr>
+                            <td class="table-info">১০ম</td>
+                            <td>৮০০০/-</td>
+                            <td>১৮০০/-</td>
+                            <td>৩৫০০/-</td>
+                            <td>৩০০০/-</td>
+                        </tr>
+                        
+                        
+                      </tbody>
+                    </table>
+                    <p>
+                      বিদ্র:- উপরোক্ত ফি কর্তৃপক্ষের অনুমোদনক্রমে পরিবর্তনযোগ্য
+                    </p>
+        
+                </div>
+            </div>
         </div>
     </div>
     <!-- End Admission Section -->

@@ -8,13 +8,16 @@ use App\Event;
 use App\Notice;
 use App\Result;
 use App\Career;
-
+use DB;
 
 class UserController extends Controller
 {
     public function home()
     {
-        return view('homePage');
+        $ToatalTeacher = Teacher::all()->Count();
+        $ToatalEvent = Event::all()->Count();
+        $ToatalNotice = Notice::all()->Count();
+        return view('homePage', compact('ToatalTeacher','ToatalEvent','ToatalNotice') );
     }
 
     public function teachers()
@@ -51,7 +54,10 @@ class UserController extends Controller
 
     public function about()
     {
-        return view('about');
+        $ToatalTeacher = Teacher::all()->Count();
+        $ToatalEvent = Event::all()->Count();
+        $ToatalNotice = Notice::all()->Count();
+        return view('about', compact('ToatalTeacher','ToatalEvent','ToatalNotice') );
     }
 
 
@@ -62,22 +68,13 @@ class UserController extends Controller
     {
         // $Careers = Career::all();
         $Careers = Career::orderBy('id', 'desc')->get();
-        // dd($Careers);
         return view('career', compact('Careers'));
     }
 
-    // public function careerDetails(Request $request)
-    // {
-    //     dd($request->all());
-    //     // $id = (base64_decode($id));
-    //     $Career = Career::find($id);
-    //     return view('careerDetails', compact('Career'));
-    // }
     public function careerDetails($id)
     {
         $id = (base64_decode($id));
         $Career = Career::find($id);
-        // dd($Career);
         return view('careerDetails', compact('Career'));
     }
 
