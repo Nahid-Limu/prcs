@@ -72,12 +72,15 @@
             <div class="row">
             <div class="col-lg-4 d-flex align-items-stretch">
                 <div class="content">
-                <h3>Why Choose Us?</h3>
+                {{-- <h3>Why Choose Us?</h3> --}}
                 {{-- <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
                     Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
                 </p> --}}
+                <img src="assets/img/whyChoseUs.jpeg" class="img-fluid" alt="">
+                
                 <div class="text-center">
+                    <br>
                     <a href="{{ route('about') }}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                 </div>
                 </div>
@@ -87,21 +90,30 @@
                 <div class="row">
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
-                        <i class="bx bx-receipt"></i>
+                        <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
+                            <img src="assets/img/Residential.jpg" class="img-fluid" alt="">
+                        </i>
+                        
                         <h4>Residential</h4>
                         {{-- <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p> --}}
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
-                        <i class="bx bx-cube-alt"></i>
+                        {{-- <i class="bx bx-cube-alt"></i> --}}
+                        <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
+                            <img src="assets/img/DayCare.jpg" class="img-fluid" alt="">
+                        </i>
                         <h4>Day Care</h4>
                         {{-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> --}}
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
-                        <i class="bx bx-images"></i>
+                        {{-- <i class="bx bx-images"></i> --}}
+                        <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
+                            <img src="assets/img/Non-Resident.jpg" class="img-fluid" alt="">
+                        </i>
                         <h4>Non Resident</h4>
                         {{-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> --}}
                     </div>
